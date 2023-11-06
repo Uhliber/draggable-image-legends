@@ -1,7 +1,13 @@
 # draggable-image-legends
 
 A Draggable Legends for Images made with Vue 3 + Tailwind CSS + Draggable.js
+
 Bonus: Highlight.js for code syntax highlighting.
+
+## Demo
+
+![Draggable Image Legends](https://github.com/Uhliber/draggable-image-legends/assets/75675306/2cd7fcda-d2e4-4c63-a3ec-561ae324545a)
+[DEMO](https://uhliber.github.io/draggable-image-legends/)
 
 ## Recommended IDE Setup
 
