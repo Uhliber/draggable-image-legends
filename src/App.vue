@@ -1,6 +1,11 @@
 <script setup>
 import { ref, onMounted, reactive, computed } from 'vue';
 import { Droppable } from '@shopify/draggable';
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+
+import "highlight.js/styles/github-dark.css";
+hljs.registerLanguage("javascript", javascript);
 
 const posX = ref(0);
 const posY = ref(0);
@@ -11,17 +16,17 @@ const droppedArea = ref(null);
 const pointers = reactive([
   {
     id: 1,
-    name: 'Kwek kwek',
-    x: 100,
-    y: 100,
-    color: 'orange',
-  },
-  {
-    id: 3,
     name: 'Hotdog',
     x: 300,
     y: 240,
     color: 'red',
+  },
+  {
+    id: 3,
+    name: 'Kwek kwek',
+    x: 100,
+    y: 100,
+    color: 'orange',
   },
   {
     id: 4,
@@ -104,15 +109,17 @@ onMounted(() => {
     }
     droppedArea.value = null;
   });
+
+  hljs.highlightAll();
 });
 </script>
 
 <template>
-  <main>
+  <main class="p-20">
     <div class="drag-container grid grid-cols-12 gap-4">
-      <div class="relative col-span-7 border border-slate-400 ring-2 ring-offset-4 ring-slate-700 rounded-md">
+      <div class="relative order-2 col-span-12 border border-slate-400 ring-2 ring-offset-4 ring-slate-700 rounded-md md:order-1 md:col-span-7">
         <svg
-          class="map"
+          class="map max-w-full"
           width="420"
           height="420"
           viewBox="0 0 420 420"
@@ -145,7 +152,7 @@ onMounted(() => {
           ></div>
         </div>
       </div>
-      <div class="dropzone-container relative col-span-5 p-5 bg-neutral-100 rounded-lg" data-dropzone="legends-dropzone">
+      <div class="dropzone-container relative order-1 col-span-12 p-5 bg-neutral-100 rounded-lg md:order-2 md:col-span-5" data-dropzone="legends-dropzone">
         <ul class="space-y-4">
           <li v-for="pointer in pointers" :key="pointer.id">
             <div class="flex items-center gap-3">
@@ -161,9 +168,11 @@ onMounted(() => {
         </ul>
       </div>
     </div>
-    <div class="absolute top-0 left-0">
+    <div class="grid">
       <pre>
+        <code>
 {{ pointers }}
+        </code>
       </pre>
     </div>
   </main>
