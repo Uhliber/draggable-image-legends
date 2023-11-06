@@ -1,6 +1,7 @@
-# drag-drop-get-coordinates
+# draggable-image-legends
 
-This template should help get you started developing with Vue 3 in Vite.
+A Draggable Legends for Images made with Vue 3 + Tailwind CSS + Draggable.js
+Bonus: Highlight.js for code syntax highlighting.
 
 ## Recommended IDE Setup
 
