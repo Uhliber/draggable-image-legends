@@ -1,6 +1,6 @@
 # draggable-image-legends
 
-A Draggable Legends for Images made with Vue 3 + Tailwind CSS + Draggable.js
+A Draggable Legends / Markers / Pointers for Images or Map Images made with Vue 3 + Tailwind CSS + Draggable.js
 
 Bonus: Highlight.js for code syntax highlighting.
 
